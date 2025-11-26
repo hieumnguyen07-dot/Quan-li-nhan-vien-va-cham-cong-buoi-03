@@ -146,6 +146,15 @@ void updateEmployee(struct Employee emp[], int n) {
     fgets(emp[pos].position, sizeof(emp[pos].position), stdin);
     emp[pos].position[strcspn(emp[pos].position, "\n")] = '\0';
 
+ if (strlen(newPosition) == 0) {
+        printf("Chuc vu khong duoc de trong!\n");
+        return;
+    }
+
+ if (newBaseSalary <= 0) {
+        printf("Luong co ban phai la so duong!\n");
+        return;
+    }
 
 	printf("Cap nhat luong co ban: ");
 	scanf("%lf", &emp[pos]. baseSalary);
@@ -267,4 +276,5 @@ void timeKeeping(struct Employee emp[], int n, struct TimeSheet ts[], int *tsCou
 	
 	
 }
+
 
